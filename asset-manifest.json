@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/tweet-card-app-react-tt/static/css/main.073c9b0a.css",
+    "main.js": "/tweet-card-app-react-tt/static/js/main.f073de23.js",
+    "static/js/787.ef767e2e.chunk.js": "/tweet-card-app-react-tt/static/js/787.ef767e2e.chunk.js",
+    "index.html": "/tweet-card-app-react-tt/index.html",
+    "main.073c9b0a.css.map": "/tweet-card-app-react-tt/static/css/main.073c9b0a.css.map",
+    "main.f073de23.js.map": "/tweet-card-app-react-tt/static/js/main.f073de23.js.map",
+    "787.ef767e2e.chunk.js.map": "/tweet-card-app-react-tt/static/js/787.ef767e2e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.f073de23.js"
+  ]
+}
