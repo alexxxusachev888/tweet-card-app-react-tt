@@ -1,6 +1,6 @@
 import { Wrapper, Inner, Header, SubHeader, StyledLink } from "./Home.styled";
 
-const Home = () => {
+export const Home = () => {
   return (
     <Wrapper>
         <Inner>
@@ -11,5 +11,3 @@ const Home = () => {
     </Wrapper>
   );
 };
-
-export default Home;

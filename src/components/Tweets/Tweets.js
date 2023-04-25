@@ -1,21 +1,27 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { UserCard} from "../UserCard/UserCard";
+import { Spinner } from "../Spinner/Spinner";
 import { fetchUsers } from "../../services/api";
-import UserCard from "../UserCard/UserCard";
 import { Container, Wrapper, TweetDiv, CenteredImg, Button, Header, Select, Option, StyledLink} from "./Tweets.styled";
 import homer from "../../assets/images/the-simpsons-homer.gif";
 
-const Tweets = () => {
+export const Tweets = () => {
   const [users, setUsers] = useState([]);
   const [page, setPage] = useState(1);
   const [filter, setFilter] = useState("show all");
+  const [isLoading, setIsLoading] = useState(false);
+  const [isEmpty, setIsEmpty] = useState(false)
 
   useEffect(()=>{
     const getUsersFromMockApi = async () => {
         try {
+          setIsLoading(true);
           const {data} = await fetchUsers(page);
+            if(data.length <= 0) {
+              setIsEmpty(true)
+            }
           setUsers([...users, ...data]);
-
+          setIsLoading(false);
         } catch (error) {
           console.log(error);
         }
@@ -26,8 +32,10 @@ const Tweets = () => {
 useEffect(()=>{
     const filterUpdate = async () => {
         try {
+          setIsLoading(true);
           const {data} = await fetchUsers(page);
           setUsers(data);
+          setIsLoading(false);
 
         } catch (error) {
           console.log(error);
@@ -50,37 +58,42 @@ const filterUsers = (user) => {
   };
   const filteredUsers = users.filter(filterUsers);
 
+  const loadMoreUsers = async () => {
+    setPage(page + 1);
+    try {
+      setIsLoading(true);
+      await fetchUsers(page);
+      setIsLoading(false);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
-    <Container style={{ display: 'flex', justifyContent: 'center', alignItems: "center", flexDirection: "column"}}>
+    <Container>
       <Header>Tweets</Header>
       <Wrapper>
         <StyledLink to="/">Back to Home</StyledLink>
         <Select
-        value={filter}
-        onChange={(e) => setFilter(e.target.value)}
-        className="filter-dropdown"        >
+            value={filter}
+            onChange={(e) => setFilter(e.target.value)}
+            className="filter-dropdown"        >
             <Option value="show all">Show All</Option>
             <Option value="follow">Follow</Option>
             <Option value="following">Following</Option>
         </Select>
       </Wrapper>
 
+      {isLoading ? <Spinner/> : <>
         <TweetDiv>
-        {filteredUsers.length > 0 ? (
-          filteredUsers.map((user) => <UserCard key={user.id} user={user} />)
-        ) : (
-          <CenteredImg>
-              <img src={homer} alt="homer is waiting th the tweets"/>
-          </CenteredImg>
-          
-        )}
-        </TweetDiv>
-        <Button onClick={() => {
-                    setPage(page + 1);
-                    fetchUsers();
-                }}>Load More</Button>
+          {filteredUsers.length > 0 ? (
+            filteredUsers.map((user) => <UserCard key={user.id} user={user} />)
+          ) : (<CenteredImg> 
+                <img src={homer} alt="homer is waiting th the tweets"/>
+              </CenteredImg>)}
+          </TweetDiv>
+          {filteredUsers.length > 0 && !isEmpty && <Button onClick={loadMoreUsers}>Load More</Button>}
+      </>}
     </Container>
   );
 };
-
-export default Tweets;

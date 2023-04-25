@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { updateFollowers } from "../../services/api";
 import { Card, Questions, Logo, Avatar, Divider, AvatarWrapper, StatsWrapper, Tweets, Folowers, Button } from "./UserCard.styled";
+import PropTypes from 'prop-types';
 import questionsPicture from '../../assets/images/questions.png'
 import logo from '../../assets/images/logo.png';
-import PropTypes from 'prop-types';
 
-const UserCard = ({ user }) => {
+export const UserCard = ({ user }) => {
     const storedFollowing = localStorage.getItem(`user-${user.id}`);
     const initialFollowing = storedFollowing ? JSON.parse(storedFollowing) : user.isFollowing;
     const [following, setFollowing] = useState(initialFollowing);
@@ -32,32 +32,28 @@ const UserCard = ({ user }) => {
     updateUserApi(updatedFollowing, updatedFollowers);
   };
 
-  const { name, avatar, tweets } = user;
+  const { avatar, tweets } = user;
 
   return (
-
-    <Card>
-      <Questions src={questionsPicture} alt='questions' />
-      <Logo src={logo} alt='goit logo' />
-      <Divider></Divider>
-      <StatsWrapper >
-        <AvatarWrapper>
-            <Avatar src={avatar} alt='user avatar' />
-        </AvatarWrapper>
-            <Tweets>{tweets} Tweets</Tweets>
-            <Folowers>{followers.toLocaleString()} Followers</Folowers>
-            
-            <Button onClick={toggleFollow}>
-            {following ? "Following" : "Follow"}
-             </Button>
-      </StatsWrapper>
-    </Card>
+      <Card>
+        <Questions src={questionsPicture} alt='questions' />
+        <Logo src={logo} alt='goit logo' />
+        <Divider></Divider>
+        <StatsWrapper >
+          <AvatarWrapper>
+              <Avatar src={avatar} alt='user avatar' />
+          </AvatarWrapper>
+              <Tweets>{tweets} Tweets</Tweets>
+              <Folowers>{followers.toLocaleString()} Followers</Folowers>
+              <Button onClick={toggleFollow}>{following ? "Following" : "Follow"}</Button>
+        </StatsWrapper>
+      </Card>
   );
 };
 
 UserCard.propTypes = {
   user: PropTypes.shape({
-    id: PropTypes.number.isRequired,
+    id: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     avatar: PropTypes.string.isRequired,
     tweets: PropTypes.number.isRequired,
@@ -65,5 +61,3 @@ UserCard.propTypes = {
     isFollowing: PropTypes.bool.isRequired,
   }).isRequired,
 };
-
-export default UserCard;

@@ -1,27 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-export const CenteredImg = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-`;
-
-export const StyledLink = styled(Link).attrs({ as: Link })`  
-    padding: 10px 20px;      
-    font-size: 20px; 
-    border-radius: 10.3108px;
-    background-color: #FFC11E; 
-    color: #FFFFFF;
-    text-decoration: none;
-    transition: box-shadow 0.3s linear;
-  &:hover {
-    color: #5199FF;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  }
-`;
-
 export const Container = styled.div`
     min-height: 100vh;
     display: flex;
@@ -58,6 +37,28 @@ export const Wrapper = styled.div`
     margin-top: 20px;
     margin-bottom: 20px;
 `
+
+export const CenteredImg = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+`;
+
+export const StyledLink = styled(Link).attrs({ as: Link })`  
+    padding: 10px 20px;      
+    font-size: 20px; 
+    border-radius: 10.3108px;
+    background-color: #FFC11E; 
+    color: #FFFFFF;
+    text-decoration: none;
+    transition: box-shadow 0.3s linear;
+  &:hover {
+    color: #5199FF;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+`
+
 export const Header = styled.h1`
     font-size: 42px;
 `
@@ -65,9 +66,9 @@ export const Header = styled.h1`
 export const TweetDiv = styled.div`
     width: 100%;
     display: flex;
-    justify-content: space-between; 
+    justify-content: space-evenly; 
     flex-wrap: wrap;
-    gap: 25px;
+    gap: 60px;
 `
 export const Select = styled.select`
     margin: 10px;
