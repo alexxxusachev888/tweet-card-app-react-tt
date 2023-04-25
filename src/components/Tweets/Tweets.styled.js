@@ -1,14 +1,13 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 
     width: 1200px;
-    min-height: 100vh;
     padding-left: 20px;
     padding-right: 20px;
     margin-left: auto;
@@ -46,6 +45,7 @@ export const TweetDiv = styled.div`
     display: flex;
     justify-content: space-between; 
     flex-wrap: wrap;
+    gap: 25px;
 `
 export const Select = styled.select`
     margin: 10px;
@@ -73,12 +73,12 @@ export const Option = styled.option`
     &:active {
     background-color: #d1d1d1;
     }
-
 `
 export const Button = styled.button`
 
     padding: 14px 28px;
     margin-top: 50px;
+    margin-bottom: 100px;
     padding: 15px 30px;
 
     font-family: 'Montserrat';
