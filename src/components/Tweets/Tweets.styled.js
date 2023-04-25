@@ -1,4 +1,26 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
+
+export const CenteredImg = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+`;
+
+export const StyledLink = styled(Link).attrs({ as: Link })`  
+    padding: 10px 20px;      
+    font-size: 20px; 
+    border-radius: 10.3108px;
+    background-color: #FFC11E; 
+    color: #FFFFFF;
+    text-decoration: none;
+    transition: box-shadow 0.3s linear;
+  &:hover {
+    color: #5199FF;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+`;
 
 export const Container = styled.div`
     min-height: 100vh;
@@ -49,8 +71,8 @@ export const TweetDiv = styled.div`
 `
 export const Select = styled.select`
     margin: 10px;
-    padding: 8px 12px;
-    font-size: 16px;
+    padding: 10px 20px;
+    font-size: 20px;
     background-color: white;
     border: 2px solid #4caf50;
     border-radius: 4px;
@@ -60,18 +82,19 @@ export const Select = styled.select`
 
     &:hover {
     border-color: #45a049;
+    background-color: #4caf50;
     }
 
 `
 export const Option = styled.option`
     font-size: 16px;
-    padding: 4px 8px;
+    padding: 20px 8px;
     background-color: #f1f1f1;
 
     &:hover,
     &:focus,
     &:active {
-    background-color: #d1d1d1;
+    background-color: #45a049;
     }
 `
 export const Button = styled.button`
@@ -84,7 +107,7 @@ export const Button = styled.button`
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 600;
-    font-size: 18px;
+    font-size: 20px; 
     line-height: 22px;
 
     border: none;

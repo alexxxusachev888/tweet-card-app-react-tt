@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import { updateFollowers } from "../../services/api";
 import { Card, Questions, Logo, Avatar, Divider, AvatarWrapper, StatsWrapper, Tweets, Folowers, Button } from "./UserCard.styled";
 import questionsPicture from '../../assets/images/questions.png'
-import logo from '../../assets/images/logo.png'
+import logo from '../../assets/images/logo.png';
+import PropTypes from 'prop-types';
 
 const UserCard = ({ user }) => {
     const storedFollowing = localStorage.getItem(`user-${user.id}`);
@@ -52,6 +53,17 @@ const UserCard = ({ user }) => {
       </StatsWrapper>
     </Card>
   );
+};
+
+UserCard.propTypes = {
+  user: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired,
+    avatar: PropTypes.string.isRequired,
+    tweets: PropTypes.number.isRequired,
+    followers: PropTypes.number.isRequired,
+    isFollowing: PropTypes.bool.isRequired,
+  }).isRequired,
 };
 
 export default UserCard;
