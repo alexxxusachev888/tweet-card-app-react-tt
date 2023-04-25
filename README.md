@@ -25,9 +25,9 @@ This project is a web application that displays user cards according to the give
 
 ## Running the Project
 
--Clone or download the project repository.
--Install the required dependencies by running npm install or yarn install.
--Start the development server by running npm start or yarn start. The application will be available at http://localhost:3000.
+- Clone or download the project repository.
+- Install the required dependencies by running npm install or yarn install.
+- Start the development server by running npm start or yarn start. The application will be available at http://localhost:3000.
 
 Now you can interact with the user cards, follow and unfollow users, and see the updated follower counts. The application will also remember your choices upon refreshing the page.
 
