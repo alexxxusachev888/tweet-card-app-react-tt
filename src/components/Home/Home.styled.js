@@ -14,15 +14,17 @@ export const Inner = styled.div`
 export const Header = styled.h1`
     font-size: 42px;
 `
-export const StyledLink = styled(Link).attrs({ as: Link })`
-    padding: 10px 25px;      
+export const SubHeader = styled.h2`
+    margin-bottom: 50px;
+`
+export const StyledLink = styled(Link).attrs({ as: Link })`  
+    padding: 20px 40px;      
     font-size: 28px; 
     border-radius: 25px;
     background-color: #FFC11E; 
     color: #FFFFFF;
     text-decoration: none;
     transition: box-shadow 0.3s linear;
-
   &:hover {
     color: #5199FF;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
