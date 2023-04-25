@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/tweet-card-app-react-tt/static/css/main.5d50e13c.css",
-    "main.js": "/tweet-card-app-react-tt/static/js/main.0a34fc3f.js",
+    "main.js": "/tweet-card-app-react-tt/static/js/main.973b1936.js",
     "static/js/787.ef767e2e.chunk.js": "/tweet-card-app-react-tt/static/js/787.ef767e2e.chunk.js",
-    "static/media/the-simpsons-homer-hiding-nothing-to-see-here-nccbbqv2ij1qkw3a.gif": "/tweet-card-app-react-tt/static/media/the-simpsons-homer-hiding-nothing-to-see-here-nccbbqv2ij1qkw3a.b0817c8245198b957474.gif",
+    "static/media/the-simpsons-homer.gif": "/tweet-card-app-react-tt/static/media/the-simpsons-homer.b0817c8245198b957474.gif",
     "static/media/questions.png": "/tweet-card-app-react-tt/static/media/questions.86562350dcaa714a1442.png",
     "index.html": "/tweet-card-app-react-tt/index.html",
     "main.5d50e13c.css.map": "/tweet-card-app-react-tt/static/css/main.5d50e13c.css.map",
-    "main.0a34fc3f.js.map": "/tweet-card-app-react-tt/static/js/main.0a34fc3f.js.map",
+    "main.973b1936.js.map": "/tweet-card-app-react-tt/static/js/main.973b1936.js.map",
     "787.ef767e2e.chunk.js.map": "/tweet-card-app-react-tt/static/js/787.ef767e2e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.5d50e13c.css",
-    "static/js/main.0a34fc3f.js"
+    "static/js/main.973b1936.js"
   ]
 }
