@@ -73,7 +73,7 @@ const filterUsers = (user) => {
     <Container>
       <Header>Tweets</Header>
       <Wrapper>
-        <StyledLink to="/">Back to Home</StyledLink>
+        <StyledLink to="/">Home Page</StyledLink>
         <Select
             value={filter}
             onChange={(e) => setFilter(e.target.value)}
@@ -92,7 +92,7 @@ const filterUsers = (user) => {
                 <img src={homer} alt="homer is waiting th the tweets"/>
               </CenteredImg>)}
           </TweetDiv>
-          {filteredUsers.length > 0 && !isEmpty && <Button onClick={loadMoreUsers}>Load More</Button>}
+          {filteredUsers.length > 0 && !isEmpty && filter === "show all" && <Button onClick={loadMoreUsers}>Load More</Button>}
       </>}
     </Container>
   );

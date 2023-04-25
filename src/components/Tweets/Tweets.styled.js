@@ -9,8 +9,7 @@ export const Container = styled.div`
     flex-direction: column;
 
     width: 1200px;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 55px;
     margin-left: auto;
     margin-right: auto;
     @media screen and (min-width: 320px) {
@@ -63,7 +62,7 @@ export const Header = styled.h1`
     font-size: 42px;
 `
 
-export const TweetDiv = styled.div`
+export const TweetDiv = styled.li`
     width: 100%;
     display: flex;
     justify-content: space-evenly; 
@@ -75,15 +74,15 @@ export const Select = styled.select`
     padding: 10px 20px;
     font-size: 20px;
     background-color: white;
-    border: 2px solid #4caf50;
+    border: 2px solid #5CD3A8;
     border-radius: 4px;
     appearance: none; // Removes the default browser styling for the select element
     outline: none;
     cursor: pointer;
 
     &:hover {
-    border-color: #45a049;
-    background-color: #4caf50;
+    border-color: #5CD3A8;
+    background-color: #5CD3A8;
     }
 
 `
@@ -113,7 +112,7 @@ export const Button = styled.button`
 
     border: none;
     border-radius: 10.3108px;
-    background-color: #4caf50;
+    background-color: #5CD3A8;
     color: white;
 
     cursor: pointer;

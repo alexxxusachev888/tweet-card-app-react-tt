@@ -6,10 +6,15 @@ import questionsPicture from '../../assets/images/questions.png'
 import logo from '../../assets/images/logo.png';
 
 export const UserCard = ({ user }) => {
+  const [following, setFollowing] = useState(user.isFollowing);
+  const [followers, setFollowers] = useState(user.followers);
+
+  useEffect(() => {
     const storedFollowing = localStorage.getItem(`user-${user.id}`);
-    const initialFollowing = storedFollowing ? JSON.parse(storedFollowing) : user.isFollowing;
-    const [following, setFollowing] = useState(initialFollowing);
-    const [followers, setFollowers] = useState(user.followers);
+    if (storedFollowing) {
+      setFollowing(JSON.parse(storedFollowing));
+    }
+  }, []);
 
   useEffect(() => {
     localStorage.setItem(`user-${user.id}`, following);
@@ -45,7 +50,7 @@ export const UserCard = ({ user }) => {
           </AvatarWrapper>
               <Tweets>{tweets} Tweets</Tweets>
               <Folowers>{followers.toLocaleString()} Followers</Folowers>
-              <Button onClick={toggleFollow}>{following ? "Following" : "Follow"}</Button>
+              <Button following={following} onClick={toggleFollow} >{following ? "Following" : "Follow"}</Button>
         </StatsWrapper>
       </Card>
   );
