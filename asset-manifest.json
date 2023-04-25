@@ -1,15 +1,16 @@
 {
   "files": {
-    "main.css": "/tweet-card-app-react-tt/static/css/main.073c9b0a.css",
-    "main.js": "/tweet-card-app-react-tt/static/js/main.f073de23.js",
+    "main.css": "/tweet-card-app-react-tt/static/css/main.8f2c71e7.css",
+    "main.js": "/tweet-card-app-react-tt/static/js/main.e9aed6fb.js",
     "static/js/787.ef767e2e.chunk.js": "/tweet-card-app-react-tt/static/js/787.ef767e2e.chunk.js",
+    "static/media/questions.png": "/tweet-card-app-react-tt/static/media/questions.86562350dcaa714a1442.png",
     "index.html": "/tweet-card-app-react-tt/index.html",
-    "main.073c9b0a.css.map": "/tweet-card-app-react-tt/static/css/main.073c9b0a.css.map",
-    "main.f073de23.js.map": "/tweet-card-app-react-tt/static/js/main.f073de23.js.map",
+    "main.8f2c71e7.css.map": "/tweet-card-app-react-tt/static/css/main.8f2c71e7.css.map",
+    "main.e9aed6fb.js.map": "/tweet-card-app-react-tt/static/js/main.e9aed6fb.js.map",
     "787.ef767e2e.chunk.js.map": "/tweet-card-app-react-tt/static/js/787.ef767e2e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.073c9b0a.css",
-    "static/js/main.f073de23.js"
+    "static/css/main.8f2c71e7.css",
+    "static/js/main.e9aed6fb.js"
   ]
 }
